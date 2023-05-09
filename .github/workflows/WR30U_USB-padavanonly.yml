@@ -1,4 +1,4 @@
-name: WR30U-padavanonly-mini
+name: WR30U_USB-padavanonly
 
 on:
   repository_dispatch:
