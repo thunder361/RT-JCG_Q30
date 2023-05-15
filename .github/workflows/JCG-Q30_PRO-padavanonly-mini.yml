@@ -51,7 +51,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
          ccache: 'true'
-         mixkey: 'JCG_Q30-padavanonly'
+         mixkey: 'JCG-Q30_PRO-padavanonly'
          toolchain: 'true'
          skip: 'true'
          clean: ${{github.event.inputs.clean}}
