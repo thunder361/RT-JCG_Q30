@@ -1,4 +1,4 @@
-name: JCG_Q30-padavanonly-mini
+name: JCG-Q30_PRO-padavanonly-mini
 
 on:
   repository_dispatch:
@@ -15,9 +15,9 @@ env:
   REPO_URL: https://github.com/thunder361/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./doc/config/JCG_Q30.config
-  DIY_P1_SH: ./doc/diy/diy-JCG_Q30-padavanonly-1.sh
-  DIY_P2_SH: ./doc/diy/diy-JCG_Q30-padavanonly-2.sh
+  CONFIG_FILE: ./doc/config/JCG-Q30_PRO.config
+  DIY_P1_SH: ./doc/diy/diy-JCG-Q30_PRO-padavanonly-1.sh
+  DIY_P2_SH: ./doc/diy/diy-JCG-Q30_PRO-padavanonly-2.sh
   TZ: Asia/Shanghai
   
 jobs:
@@ -94,8 +94,8 @@ jobs:
          cd openwrt
          echo -e "$(nproc) thread compile"
          make -j$(nproc) || make -j1 V=s
-         echo "release_tag=JCG_Q30-padavanonly-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "release_name=JCG_Q30-padavanonly-OpenWrt-mini" >> $GITHUB_ENV
+         echo "release_tag=JCG-Q30_PRO-padavanonly-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=JCG-Q30_PRO-padavanonly-OpenWrt-mini" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Check space usage
@@ -122,8 +122,8 @@ jobs:
          rm -rf *kernel.bin
          rm -rf *manifest
          rm -rf *tar.bz2
-         mv *sysupgrade.bin KJCG_Q30-padavanonly-mini-sysupgrade-$(date +%Y.%m.%d).bin
-         mv *factory.bin JCG_Q30-padavanonly-mini-factory-$(date +%Y.%m.%d).bin
+         mv *sysupgrade.bin JCG-Q30_PRO-padavanonly-mini-sysupgrade-$(date +%Y.%m.%d).bin
+         mv *factory.bin JCG-Q30_PRO-padavanonly-mini-factory-$(date +%Y.%m.%d).bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
