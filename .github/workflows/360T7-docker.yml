@@ -1,4 +1,4 @@
-name: 360T7-hanwckf-mini
+name: 360T7-hanwckf-docker
 
 on:
   repository_dispatch:
@@ -50,7 +50,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
          ccache: 'true'
-         mixkey: '360T7-hanwckf'
+         mixkey: '360T7-hanwckf-docker'
          toolchain: 'true'
          skip: 'true'
          clean: ${{github.event.inputs.clean}}
@@ -93,8 +93,8 @@ jobs:
          cd openwrt
          echo -e "$(nproc) thread compile"
          make -j$(nproc) || make -j1 V=s
-         echo "release_tag=360T7-hanwckf-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "release_name=360T7-hanwckf-OpenWrt-mini" >> $GITHUB_ENV
+         echo "release_tag=360T7-hanwckf-OpenWrt-docker-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=360T7-hanwckf-OpenWrt-docker" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Check space usage
@@ -120,8 +120,8 @@ jobs:
          rm -rf version.buildinfo
          rm -rf *kernel.bin
          rm -rf *manifest
-         mv *sysupgrade.bin 360T7-hanwckf-108M-mini-sysupgrade-$(date +%Y.%m.%d).bin
-         mv *factory.bin 360T7-hanwckf-108M-mini-factory-$(date +%Y.%m.%d).bin
+         mv *sysupgrade.bin 360T7-hanwckf-108M-docker-sysupgrade-$(date +%Y.%m.%d).bin
+         mv *factory.bin 360T7-hanwckf-108M-docker-factory-$(date +%Y.%m.%d).bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
