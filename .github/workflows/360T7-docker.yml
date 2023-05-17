@@ -16,6 +16,7 @@ env:
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./doc/config/360T7-docker.config
+  DIY_P1_SH: ./doc/diy/diy-360T7-hanwckf-1.sh
   DIY_P2_SH: ./doc/diy/diy-360T7-hanwckf-2.sh
   TZ: Asia/Shanghai
   
