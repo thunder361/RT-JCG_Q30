@@ -51,7 +51,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
          ccache: 'true'
-         mixkey: 'KOMI_A31-padavanonly'
+         mixkey: 'CMCC_A10_USB-padavanonly'
          toolchain: 'true'
          skip: 'true'
          clean: ${{github.event.inputs.clean}}
