@@ -15,7 +15,7 @@ env:
   REPO_URL: https://github.com/thunder-Zhang/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./doc/config/KOMI_A31-padavanonly-mini.config
+  CONFIG_FILE: ./doc/config/KOMI_A31_PADAVANONLY.config
   DIY_P1_SH: ./doc/diy/diy-KOMI_A31-padavanonly-1.sh
   DIY_P2_SH: ./doc/diy/diy-KOMI_A31-padavanonly-2.sh
   TZ: Asia/Shanghai
