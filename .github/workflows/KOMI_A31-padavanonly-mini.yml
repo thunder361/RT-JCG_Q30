@@ -12,7 +12,7 @@ on:
   #- cron: 0 17 * * 1
 
 env:
-  REPO_URL: https://github.com/thunder-Zhang/immortalwrtARM
+  REPO_URL: https://github.com/thunder361/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./doc/config/KOMI_A31_PADAVANONLY.config
