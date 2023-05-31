@@ -16,8 +16,8 @@ env:
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./doc/config/KOMI_A31.config
-  DIY_P1_SH: ./doc/diy/diy-komi_a31-hanwckf-1.sh
-  DIY_P2_SH: ./doc/diy/diy-komi_a31-hanwckf-2.sh
+  DIY_P1_SH: ./doc/diy/diy-hanwckf-1.sh
+  DIY_P2_SH: ./doc/diy/diy-hanwckf-2.sh
   TZ: Asia/Shanghai
   
 jobs:
@@ -94,8 +94,8 @@ jobs:
          cd openwrt
          echo -e "$(nproc) thread compile"
          make -j$(nproc) || make -j1 V=s
-         echo "release_tag=KOMI_A31-114M-OpenWrt-mini-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-         echo "release_name=KOMI_A31-114M-OpenWrt-mini" >> $GITHUB_ENV
+         echo "release_tag=KOMI_A31-114M-OpenWrt-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+         echo "release_name=KOMI_A31-114M-OpenWrt" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Check space usage
@@ -121,8 +121,8 @@ jobs:
          rm -rf version.buildinfo
          rm -rf *kernel.bin
          rm -rf *manifest
-         mv *sysupgrade.bin KOMI_A31-114M-mini-sysupgrade-$(date +%Y.%m.%d).bin
-         mv *factory.bin KOMI_A31-114M-mini-factory-$(date +%Y.%m.%d).bin
+         mv *sysupgrade.bin KOMI_A31-114M-sysupgrade-$(date +%Y.%m.%d).bin
+         mv *factory.bin KOMI_A31-114M-factory-$(date +%Y.%m.%d).bin
          echo "FIRMWARE=$PWD" >> $GITHUB_ENV
          echo "status=success" >> $GITHUB_OUTPUT
         
