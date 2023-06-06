@@ -1,4 +1,4 @@
-name: KOMI_A31
+name: KOMI_A31_OPENWRT
 
 on:
   repository_dispatch:
